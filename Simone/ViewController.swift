@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     var responseSequence = [Int]()
     
     @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var scoreLabel: UILabel!
     
     @IBOutlet weak var tapView0: UIView!
     @IBOutlet weak var tapView1: UIView!
@@ -27,11 +28,18 @@ class ViewController: UIViewController {
     let tapRec2 = UITapGestureRecognizer()
     let tapRec3 = UITapGestureRecognizer()
     
+    // Score and Level Counters
+    var score = 0
+    var level = 0
+    var difficulty = 0
+    
+    
     var tapViewArray = [UIView]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.label.text = "Hit start to play"
+        self.scoreLabel.text = String(score)
         
         tapViewArray = [tapView0, tapView1, tapView2, tapView3]
         tapRec0.addTarget(self, action: "tappedView0")
@@ -57,8 +65,25 @@ class ViewController: UIViewController {
     @IBOutlet weak var startButton: UIButton!
     
     @IBAction func startButton(sender: AnyObject) {
+        
+        switch level
+        {
+        case 0,1,2,3,4:
+            difficulty = 4
+        case 6,7,8,9,10:
+            difficulty = 5
+        case 11,12,13,14,15:
+            difficulty = 6
+        case 16,17,18,19,20:
+            difficulty = 7
+        case 21,22,23,24,25:
+            difficulty = 8
+        default:
+            self.label.text = "YOU WON!😀😎😃😄"
+        
+        }
         responseSequence = []
-        problemSequence = makeSequence(3)
+        problemSequence = makeSequence(difficulty)
          // problemSequence = [0,2,2,2,3]
         self.label.text = "Watch sequence!"
         
@@ -108,7 +133,7 @@ class ViewController: UIViewController {
             
              currentDelay = currentDelay + 1.0
             
-            
+             
             
             
         }
@@ -120,8 +145,13 @@ class ViewController: UIViewController {
     @IBAction func submitButton(sender: AnyObject) {
         if (problemSequence == responseSequence){
             self.label.text = "CORRECT!😀 Let's go again!"
+            score += 1
+            level += 1
+            self.scoreLabel.text = String(score)
         } else {
             self.label.text = "Whoops, try again.😢"
+            score -= 1
+            self.scoreLabel.text = String(score)
             responseSequence = []
         }
     }
