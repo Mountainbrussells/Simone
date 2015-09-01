@@ -133,7 +133,7 @@ class ViewController: UIViewController {
             
              currentDelay = currentDelay + 1.0
             
-             
+            
             
             
         }
@@ -232,7 +232,17 @@ class ViewController: UIViewController {
             animations: {self.tapView3.alpha = 0.5},
             completion: {BOOL in UIView.animateWithDuration(0.5, delay: 0.0, options: nil, animations: {self.tapView3.alpha = 1.0}, completion: nil)})
     }
+
+    @IBAction func resetButton(sender: AnyObject) {
+        score = 0
+        level = 0
+        self.label.text = "Hit start to play"
+        self.scoreLabel.text = String(score)
+    }
+
 }
+
+
 
 
 

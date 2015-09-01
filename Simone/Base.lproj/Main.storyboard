@@ -17,6 +17,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hdu-Z0-bw9">
+                                <rect key="frame" x="531" y="28" width="53" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="53" id="I0H-W5-Rvq"/>
+                                </constraints>
+                                <state key="normal" title="START">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b7u-BZ-Gsg"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hsf-kO-6x8">
                                 <rect key="frame" x="16" y="66" width="117" height="100"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -33,15 +45,15 @@
                                 <rect key="frame" x="141" y="174" width="117" height="100"/>
                                 <color key="backgroundColor" red="0.18431372939999999" green="0.9450981021" blue="0.231372565" alpha="1" colorSpace="deviceRGB"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kAG-EE-Dn9">
-                                <rect key="frame" x="16" y="32" width="527" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kAG-EE-Dn9">
+                                <rect key="frame" x="96" y="32" width="447" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Se0-NQ-phy">
                                 <rect key="frame" x="16" y="550" width="393" height="30"/>
-                                <state key="normal" title="Submit Sequence">
+                                <state key="normal" title="SUBMIT ANSWER">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -60,16 +72,16 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hdu-Z0-bw9">
-                                <rect key="frame" x="551" y="28" width="33" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w0E-LD-Q9l">
+                                <rect key="frame" x="16" y="28" width="48" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="33" id="5n4-iy-jYA"/>
+                                    <constraint firstAttribute="width" constant="48" id="PCK-Lk-g0X"/>
                                 </constraints>
-                                <state key="normal" title="Start">
+                                <state key="normal" title="RESET">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="startButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b7u-BZ-Gsg"/>
+                                    <action selector="resetButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XPf-dc-N3j"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -91,10 +103,12 @@
                             <constraint firstItem="rk0-Rz-1a1" firstAttribute="top" secondItem="kAG-EE-Dn9" secondAttribute="bottom" constant="13" id="TRK-9t-REN"/>
                             <constraint firstItem="73p-BW-YaG" firstAttribute="width" secondItem="hsf-kO-6x8" secondAttribute="width" id="WWa-bF-cyS"/>
                             <constraint firstItem="7hp-vk-N07" firstAttribute="leading" secondItem="Se0-NQ-phy" secondAttribute="trailing" constant="8" id="Yhi-0k-JF5"/>
+                            <constraint firstItem="w0E-LD-Q9l" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="atw-4n-L6B"/>
                             <constraint firstItem="hsf-kO-6x8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="b6k-NE-qBa"/>
+                            <constraint firstItem="w0E-LD-Q9l" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="bkA-ch-t24"/>
                             <constraint firstItem="73p-BW-YaG" firstAttribute="width" secondItem="kMP-he-3Rg" secondAttribute="width" id="fqL-xg-CHH"/>
                             <constraint firstItem="73p-BW-YaG" firstAttribute="top" secondItem="rk0-Rz-1a1" secondAttribute="bottom" constant="8" id="gwL-nz-YaF"/>
-                            <constraint firstItem="kAG-EE-Dn9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="hsJ-JW-Cf9"/>
+                            <constraint firstItem="kAG-EE-Dn9" firstAttribute="leading" secondItem="w0E-LD-Q9l" secondAttribute="trailing" constant="8" id="hJo-0Y-gY1"/>
                             <constraint firstItem="Se0-NQ-phy" firstAttribute="top" secondItem="kMP-he-3Rg" secondAttribute="bottom" constant="8" id="k4G-OO-z6E"/>
                             <constraint firstItem="73p-BW-YaG" firstAttribute="height" secondItem="rk0-Rz-1a1" secondAttribute="height" id="rkh-6U-zHD"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Se0-NQ-phy" secondAttribute="bottom" constant="20" id="sHg-92-gaw"/>
@@ -119,7 +133,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="320" y="369"/>
+            <point key="canvasLocation" x="494" y="372"/>
         </scene>
     </scenes>
 </document>
